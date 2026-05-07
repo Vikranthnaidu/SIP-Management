@@ -1,0 +1,136 @@
+{
+  "info": {
+    "_postman_id": "1975e774-8ab9-4a45-92c5-b1c5d12ff039",
+    "name": "funds",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41560144"
+  },
+  "item": [
+    {
+      "name": "login",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"email\":\"rahul@gmail.com\",\n    \"password\":\"rahul123\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/sip/invest/login",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "invest",
+            "login"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "createfund",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 10,\n    \"name\": \"Axis Bluechip Fund\",\n    \"amc_name\": \"Axis AMC\",\n    \"current_nav\": 85.60\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/funds/fund",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "api",
+            "funds",
+            "fund"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getallfunds",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "updateNav",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"current_nav\": 153.75\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/sip/funds/3/nav",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "funds",
+            "3",
+            "nav"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "logout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInJvbGUiOiJpbnZlc3RvciIsImlhdCI6MTc3ODE0NjkyNSwiZXhwIjoxNzc4MTQ4NzI1fQ.DZKHIeG38S1t88ZPUOTDngUnH0KW93NBb49KOX7MLDw",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/sip/invest/logout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "invest",
+            "logout"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
