@@ -1,0 +1,145 @@
+{
+  "info": {
+    "_postman_id": "f7e9ae66-51c9-4fa0-b3e6-541b1da2ba83",
+    "name": "sip",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41560144"
+  },
+  "item": [
+    {
+      "name": "createSip",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJhaHVsQGdtYWlsLmNvbSIsInJvbGUiOiJpbnZlc3RvciIsImlhdCI6MTc3ODE0NjkyNSwiZXhwIjoxNzc4MTQ4NzI1fQ.DZKHIeG38S1t88ZPUOTDngUnH0KW93NBb49KOX7MLDw",
+            "type": "text"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"id\": 11,\n    \"amount\": 5000,\n    \"purchase_date\": \"2026-05-07\",\n    \"unit_value\": 0,\n    \"portfolio_id\": 101,\n    \"mutual_id\": 1,\n    \"status\": \"ACTIVE\"\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/sip/createSip",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "createSip"
+          ]
+        }
+      },
+      "response": [
+        {
+          "message": "SIP Created",
+          "sip": {
+            "id": 891,
+            "amount": 5000,
+            "purchase_date": "2026-05-07",
+            "unit_value": 0,
+            "portfolio_id": 101,
+            "mutual_id": 1,
+            "status": "ACTIVE"
+          }
+        }
+      ]
+    },
+    {
+      "name": "getSipById",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "message": "SIP Found",
+          "sip": {
+            "id": 11,
+            "amount": 5000,
+            "purchase_date": "2026-05-07",
+            "unit_value": 0,
+            "portfolio_id": 101,
+            "mutual_id": 1,
+            "status": "ACTIVE"
+          }
+        }
+      ]
+    },
+    {
+      "name": "processSip",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/sip/sipId",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "sipId"
+          ]
+        }
+      },
+      "response": [
+        {
+          "message": "SIP Processed Successfully",
+          "transaction": {
+            "sip_id": 11,
+            "amount": 5000,
+            "nav": 85.45,
+            "units": 58.51375073142188
+          }
+        }
+      ]
+    },
+    {
+      "name": "getTransactions",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": [
+        {
+          "message": "Transactions Found",
+          "transactions": [
+            {
+              "transaction_id": 1778147204441,
+              "portfolio_id": 101,
+              "mutual_id": 1,
+              "sip_id": 11,
+              "transaction_type": "BUY",
+              "amount": 5000,
+              "nav": 85.45,
+              "units": 58.51375073142188,
+              "transaction_date": "2026-05-07"
+            },
+            {
+              "transaction_id": 1778155916793,
+              "portfolio_id": 101,
+              "mutual_id": 1,
+              "sip_id": 11,
+              "transaction_type": "BUY",
+              "amount": 5000,
+              "nav": 85.45,
+              "units": 58.51375073142188,
+              "transaction_date": "2026-05-07"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

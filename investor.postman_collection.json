@@ -1,0 +1,92 @@
+{
+  "info": {
+    "_postman_id": "2804e1d9-5655-4b6c-8970-bc0c14ddec28",
+    "name": "investor",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "41560144"
+  },
+  "item": [
+    {
+      "name": "addInvestor",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/sip/invest/addInvestor",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "invest",
+            "addInvestor"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getDetails",
+      "request": {
+        "method": "GET",
+        "header": []
+      },
+      "response": []
+    },
+    {
+      "name": "getHoldings",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/sip/invest/id/holdings",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "invest",
+            "id",
+            "holdings"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "getNetWorth",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/sip/invest/id/networth",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "3000",
+          "path": [
+            "sip",
+            "invest",
+            "id",
+            "networth"
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
